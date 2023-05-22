@@ -25,7 +25,7 @@ namespace ClassLibrary1
 
         public override string ToString()
         {
-            return titulo + " " + categoria + " " + fechaVencimiento;
+            return this.titulo + " | " + this.categoria + " | " + this.fechaVencimiento;
         }
     }
 }

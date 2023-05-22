@@ -42,29 +42,37 @@ namespace WindowsFormsApp1
 
             listView1.Items.Add(item);
         }*/
-
+static int index = 0;
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Form2 form = new Form2();
             form.StartPosition = FormStartPosition.CenterScreen;
-            form.Show();
+            form.ShowDialog();
 
             //tareas.Add(new Tarea("Titulo", "descripcion", DateTime.Now, "categoria"));
             //ListBoxItem item = new ListBoxItem();
 
             //listBox1.Items.Add(""+tareas.Last());
+            listBox1.Items.Insert(index, tareas[index].ToString());
+            index++;
         }
-        static int index = 0;
+        
+        
         private void Actualizar_Click(object sender, EventArgs e)
         {
-            if (tareas[index] == tareas[index - 1])
-            {
+            
+        }
 
-            } else
-            {
-                listView1.Items.Insert(index, "Jk" + tareas.Last());
-                index++;
-            }
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(listBox1.SelectedItem.ToString());
+            
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Remove(listBox1.SelectedItem);
+            tareas.Remove(tareas[listBox1.SelectedIndex]);
         }
     }
 }

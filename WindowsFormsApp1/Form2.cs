@@ -46,11 +46,11 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrEmpty(textBox1.Text) || comboBox1.SelectedItem == null)
-            {
+            { 
                 MessageBox.Show("Faltan Datos");
             } else
             {
-                Tarea tarea = new Tarea(textBox1.Text, textBox2.Text, DateTime.Parse(dateTimePicker1.Text), comboBox1.SelectedText);
+                Tarea tarea = new Tarea(textBox1.Text, textBox2.Text, DateTime.Parse(dateTimePicker1.Text), comboBox1.SelectedItem.ToString());
                 Form1.tareas.Add(tarea);
 
                 Close();
