@@ -45,5 +45,13 @@ namespace WindowsFormsApp1
 
             //textBox1.Lines[0] = Form1.tareas[listBox.SelectedIndex].titulo;
         }
+
+        private void button_guardar_Click(object sender, EventArgs e)
+        {
+            ListBox listBox = form.GetListBox();
+            Tarea newTarea = new Tarea(textBox1.Text, comboBox1.SelectedItem.ToString(), dateTimePicker1.Value, textBox2.Text);
+
+            Form1.tareas[listBox.SelectedIndex] = newTarea;
+        }
     }
 }

@@ -15,10 +15,10 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        /*public  System.Windows.Forms.ListBox GetListBox()
+        public  System.Windows.Forms.ListBox GetListBox()
         {
             return this.listBox1;
-        }*/
+        }
 
         public static List <Tarea> tareas = new List <Tarea>();
         
@@ -77,7 +77,6 @@ static int index = 0;
             form.GetDateTimePicker().Value = tareas[listBox1.SelectedIndex].fechaVencimiento;
             form.GetTextBox2().Text = tareas[listBox1.SelectedIndex].descripcion;
             form.ShowDialog();
-
 
         }
 
