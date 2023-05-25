@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form3 : Form
     {
-        Form1 form = new Form1();
+        private ListBox listBox;
 
         public TextBox GetTextBox1()
         {
@@ -34,9 +34,10 @@ namespace WindowsFormsApp1
         {
             return this.textBox2;
         }
-        public Form3()
+        public Form3(ListBox listBox)
         {
             InitializeComponent();
+            this.listBox = listBox;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -48,10 +49,26 @@ namespace WindowsFormsApp1
 
         private void button_guardar_Click(object sender, EventArgs e)
         {
-            ListBox listBox = form.GetListBox();
-            Tarea newTarea = new Tarea(textBox1.Text, comboBox1.SelectedItem.ToString(), dateTimePicker1.Value, textBox2.Text);
+            
+            
+            Tarea newTarea = new Tarea(textBox1.Text, textBox2.Text, dateTimePicker1.Value, comboBox1.SelectedItem.ToString());
 
-            Form1.tareas[listBox.SelectedIndex] = newTarea;
+            try
+            {
+                if (string.IsNullOrEmpty(textBox1.Text) || comboBox1.SelectedItem == null)
+                {
+                    MessageBox.Show("Faltan Datos");
+                }
+                else
+                {
+                    Form1.tareas[listBox.SelectedIndex] = newTarea;
+                    Close();
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("El indice es" + listBox.SelectedIndex);
+
+            }
         }
     }
 }

@@ -50,16 +50,17 @@ namespace WindowsFormsApp1
 static int index = 0;
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            try { 
             Form2 form = new Form2();
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
+                listBox1.Items.Insert(index, tareas[index].ToString());
+                index++;
+            } catch (Exception ex)
+            {
+                MessageBox.Show("El index es" + index);
 
-            //tareas.Add(new Tarea("Titulo", "descripcion", DateTime.Now, "categoria"));
-            //ListBoxItem item = new ListBoxItem();
-
-            //listBox1.Items.Add(""+tareas.Last());
-            listBox1.Items.Insert(index, tareas[index].ToString());
-            index++;
+            }
         }
         
         
@@ -70,7 +71,7 @@ static int index = 0;
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 form = new Form3();
+            Form3 form = new Form3(listBox1);
             
             form.GetTextBox1().Text = tareas[listBox1.SelectedIndex].titulo;
             form.GetComboBox().Text = tareas[listBox1.SelectedIndex].categoria;
@@ -78,12 +79,19 @@ static int index = 0;
             form.GetTextBox2().Text = tareas[listBox1.SelectedIndex].descripcion;
             form.ShowDialog();
 
+            listBox1.Items.Insert(listBox1.SelectedIndex, tareas[listBox1.SelectedIndex]);
+            listBox1.Items.Remove(listBox1.SelectedItem);
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listBox1.Items.Remove(listBox1.SelectedItem);
             tareas.Remove(tareas[listBox1.SelectedIndex]);
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
