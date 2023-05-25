@@ -34,6 +34,12 @@ namespace WindowsFormsApp1
         {
             return this.textBox2;
         }
+
+        public CheckBox GetCheckBox()
+        {
+            return this.checkBox1;
+        }
+
         public Form3(ListBox listBox)
         {
             InitializeComponent();
@@ -51,7 +57,7 @@ namespace WindowsFormsApp1
         {
             
             
-            Tarea newTarea = new Tarea(textBox1.Text, textBox2.Text, dateTimePicker1.Value, comboBox1.SelectedItem.ToString());
+            Tarea newTarea = new Tarea(textBox1.Text, textBox2.Text, dateTimePicker1.Value, comboBox1.SelectedItem.ToString(), checkBox1.Checked);
 
             try
             {
@@ -69,6 +75,11 @@ namespace WindowsFormsApp1
                 MessageBox.Show("El indice es" + listBox.SelectedIndex);
 
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

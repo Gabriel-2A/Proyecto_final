@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
         }
 
         public static List <Tarea> tareas = new List <Tarea>();
+        public List <Tarea> TareasFiltradas = new List <Tarea>();
         
         
         public Form1()
@@ -77,6 +78,7 @@ static int index = 0;
             form.GetComboBox().Text = tareas[listBox1.SelectedIndex].categoria;
             form.GetDateTimePicker().Value = tareas[listBox1.SelectedIndex].fechaVencimiento;
             form.GetTextBox2().Text = tareas[listBox1.SelectedIndex].descripcion;
+            form.GetCheckBox().Checked = tareas[listBox1.SelectedIndex].esCompletada;
             form.ShowDialog();
 
             listBox1.Items.Insert(listBox1.SelectedIndex, tareas[listBox1.SelectedIndex]);
@@ -92,6 +94,45 @@ static int index = 0;
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void marcarComoCompletadaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tareas[listBox1.SelectedIndex].esCompletada = true;
+            
+        }
+
+        private void aceparToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string cat = FiltrarCategoria.SelectedItem.ToString();
+            switch (cat)
+            {
+                case "Escuela":
+                    Filtrar(cat);
+                    listBox1.Items.Clear();
+                    for(int i = 0; i < TareasFiltradas.Count; i++) 
+                    {
+                        listBox1.Items.Insert(i, TareasFiltradas[i]);
+                    }
+                    listBox1.Refresh();
+                    break;
+
+
+            }
+            //listBox1.Sorted.CompareTo(tareas[listBox1.SelectedIndex].categoria);
+        }
+
+        public void Filtrar(string parametro)
+        {
+            TareasFiltradas.Clear();
+
+            for(int i = 0; i < tareas.Count; i++)
+            {
+                if (tareas[i].categoria == parametro)
+                {
+                    TareasFiltradas.Add(tareas[i]); 
+                }
+            }
         }
     }
 }

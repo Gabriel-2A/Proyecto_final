@@ -9,14 +9,16 @@ namespace ClassLibrary1
 {
     public class Tarea
     {
+        public bool esCompletada;
         public string titulo;
         public string descripcion;
         public DateTime fechaVencimiento;
         public DateTime fechaInicio = DateTime.Today;
         public string categoria;
 
-        public Tarea(string titulo, string descripcion, DateTime fechaVencimiento, string categoria)
+        public Tarea(string titulo, string descripcion, DateTime fechaVencimiento, string categoria, bool esCompletada = false)
         {
+            this.esCompletada = esCompletada;
             this.titulo = titulo;
             this.descripcion = descripcion;
             this.fechaVencimiento = fechaVencimiento;
