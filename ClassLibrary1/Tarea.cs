@@ -16,6 +16,8 @@ namespace ClassLibrary1
         public DateTime fechaInicio = DateTime.Today;
         public string categoria;
 
+        public Tarea() { }
+
         public Tarea(string titulo, string descripcion, DateTime fechaVencimiento, string categoria, bool esCompletada = false)
         {
             this.esCompletada = esCompletada;

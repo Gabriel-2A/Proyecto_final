@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
             return this.listBox1;
         }
 
+        Tarea tarea = new Tarea();
         public static List <Tarea> tareas = new List <Tarea>();
         public List <Tarea> TareasFiltradas = new List <Tarea>();
         
@@ -34,21 +35,7 @@ namespace WindowsFormsApp1
             
         }
 
-        /*private void button1_Click(object sender, EventArgs e)
-        {
-            Form2 form = new Form2();
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Show();
-            Tarea tarea = new Tarea("qwq", "qwqw", DateTime.Now, "pepepepe");
-            tareas.Add(tarea);
-
-            ListViewItem item = new ListViewItem();
-            item.Text = tareas.Last().ToString();
-            item.Tag = tareas.Last();
-
-            listView1.Items.Add(item);
-        }*/
-static int index = 0;
+        private static int index = 0;
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             try { 
@@ -105,7 +92,7 @@ static int index = 0;
         private void aceparToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string cat = FiltrarCategoria.SelectedItem.ToString();
-            switch (cat)
+            /*switch (cat)
             {
                 case "Escuela":
                     Filtrar(cat);
@@ -117,12 +104,61 @@ static int index = 0;
                     listBox1.Refresh();
                     break;
 
+                case "Trabajo":
+                    Filtrar(cat);
+                    listBox1.Items.Clear();
+                    for (int i = 0; i < TareasFiltradas.Count; i++)
+                    {
+                        listBox1.Items.Insert(i, TareasFiltradas[i]);
+                    }
+                    listBox1.Refresh();
+                    break;
 
-            }
-            //listBox1.Sorted.CompareTo(tareas[listBox1.SelectedIndex].categoria);
+                case "Personal":
+                    Filtrar(cat);
+                    listBox1.Items.Clear();
+                    for (int i = 0; i < TareasFiltradas.Count; i++)
+                    {
+                        listBox1.Items.Insert(i, TareasFiltradas[i]);
+                    }
+                    listBox1.Refresh();
+                    break;
+
+                case "Urgente":
+                    Filtrar(cat);
+                    listBox1.Items.Clear();
+                    for (int i = 0; i < TareasFiltradas.Count; i++)
+                    {
+                        listBox1.Items.Insert(i, TareasFiltradas[i]);
+                    }
+                    listBox1.Refresh();
+                    break;
+
+                case "Completadas":
+                    Filtrar(cat);
+                    listBox1.Items.Clear();
+                    for (int i = 0; i < TareasFiltradas.Count; i++)
+                    {
+                        listBox1.Items.Insert(i, TareasFiltradas[i]);
+                    }
+                    listBox1.Refresh();
+                    break;
+
+                case "No Completadas":
+                    Filtrar(cat);
+                    listBox1.Items.Clear();
+                    for (int i = 0; i < TareasFiltradas.Count; i++)
+                    {
+                        listBox1.Items.Insert(i, TareasFiltradas[i]);
+                    }
+                    listBox1.Refresh();
+                    break;
+            }*/
+
+            InsertarTareasFiltradas(cat);
         }
-
-        public void Filtrar(string parametro)
+//listBox1.Sorted.CompareTo(tareas[listBox1.SelectedIndex].categoria);
+        public void FiltrarPorCategoria(string parametro)
         {
             TareasFiltradas.Clear();
 
@@ -130,7 +166,28 @@ static int index = 0;
             {
                 if (tareas[i].categoria == parametro)
                 {
-                    TareasFiltradas.Add(tareas[i]); 
+                    TareasFiltradas.Add(tareas[i]);
+                } 
+            }
+        }
+
+        public void InsertarTareasFiltradas(string parametro)
+        {
+            if (string.IsNullOrEmpty(parametro) != true)
+            {
+                FiltrarPorCategoria(parametro);
+                listBox1.Items.Clear();
+                for (int i = 0; i < TareasFiltradas.Count; i++)
+                {
+                    listBox1.Items.Insert(i, TareasFiltradas[i]);
+                }
+                listBox1.Refresh();
+            }
+            else
+            {
+                for (int i = 0; i < TareasFiltradas.Count; i++)
+                {
+                    listBox1.Items.Insert(i, tareas[i]);
                 }
             }
         }

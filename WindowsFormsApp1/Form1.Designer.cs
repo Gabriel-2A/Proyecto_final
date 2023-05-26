@@ -36,12 +36,12 @@ namespace WindowsFormsApp1
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcarComoCompletadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.BotonFiltrar = new System.Windows.Forms.ToolStripDropDownButton();
             this.FiltrarCategoria = new System.Windows.Forms.ToolStripComboBox();
             this.aceparToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -54,26 +54,26 @@ namespace WindowsFormsApp1
             this.eliminarToolStripMenuItem,
             this.marcarComoCompletadaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(229, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(251, 76);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(250, 24);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(250, 24);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // marcarComoCompletadaToolStripMenuItem
             // 
             this.marcarComoCompletadaToolStripMenuItem.Name = "marcarComoCompletadaToolStripMenuItem";
-            this.marcarComoCompletadaToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.marcarComoCompletadaToolStripMenuItem.Size = new System.Drawing.Size(250, 24);
             this.marcarComoCompletadaToolStripMenuItem.Text = "Marcar como completada";
             this.marcarComoCompletadaToolStripMenuItem.Click += new System.EventHandler(this.marcarComoCompletadaToolStripMenuItem_Click);
             // 
@@ -85,19 +85,9 @@ namespace WindowsFormsApp1
             this.BotonFiltrar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(470, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(627, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // listBox1
-            // 
-            this.listBox1.ContextMenuStrip = this.contextMenuStrip1;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(0, 30);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(470, 381);
-            this.listBox1.TabIndex = 2;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // toolStripButton1
             // 
@@ -105,7 +95,7 @@ namespace WindowsFormsApp1
             this.toolStripButton1.Image = global::WindowsFormsApp1.Properties.Resources._51d2d8319255a99ded3f9f2178632db4;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -118,12 +108,13 @@ namespace WindowsFormsApp1
             this.BotonFiltrar.Image = global::WindowsFormsApp1.Properties.Resources._51d2d8319255a99ded3f9f2178632db4;
             this.BotonFiltrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BotonFiltrar.Name = "BotonFiltrar";
-            this.BotonFiltrar.Size = new System.Drawing.Size(33, 24);
+            this.BotonFiltrar.Size = new System.Drawing.Size(34, 24);
             this.BotonFiltrar.Text = "Filtrar";
             // 
             // FiltrarCategoria
             // 
             this.FiltrarCategoria.Items.AddRange(new object[] {
+            "Todo",
             "Escuela",
             "Trabajo",
             "Personal",
@@ -131,26 +122,38 @@ namespace WindowsFormsApp1
             "Completadas",
             "No Completadas"});
             this.FiltrarCategoria.Name = "FiltrarCategoria";
-            this.FiltrarCategoria.Size = new System.Drawing.Size(121, 25);
+            this.FiltrarCategoria.Size = new System.Drawing.Size(121, 28);
             this.FiltrarCategoria.Text = "Filtrar por:";
             // 
             // aceparToolStripMenuItem
             // 
             this.aceparToolStripMenuItem.Name = "aceparToolStripMenuItem";
-            this.aceparToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.aceparToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.aceparToolStripMenuItem.Text = "Aceptar";
             this.aceparToolStripMenuItem.Click += new System.EventHandler(this.aceparToolStripMenuItem_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.ContextMenuStrip = this.contextMenuStrip1;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(0, 37);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(625, 468);
+            this.listBox1.TabIndex = 2;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(470, 414);
+            this.ClientSize = new System.Drawing.Size(627, 510);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
