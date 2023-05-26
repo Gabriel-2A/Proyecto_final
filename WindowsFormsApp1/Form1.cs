@@ -92,72 +92,23 @@ namespace WindowsFormsApp1
         private void aceparToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string cat = FiltrarCategoria.SelectedItem.ToString();
-            /*switch (cat)
+
+            if(cat == "Todo")
             {
-                case "Escuela":
-                    Filtrar(cat);
-                    listBox1.Items.Clear();
-                    for(int i = 0; i < TareasFiltradas.Count; i++) 
-                    {
-                        listBox1.Items.Insert(i, TareasFiltradas[i]);
-                    }
-                    listBox1.Refresh();
-                    break;
-
-                case "Trabajo":
-                    Filtrar(cat);
-                    listBox1.Items.Clear();
-                    for (int i = 0; i < TareasFiltradas.Count; i++)
-                    {
-                        listBox1.Items.Insert(i, TareasFiltradas[i]);
-                    }
-                    listBox1.Refresh();
-                    break;
-
-                case "Personal":
-                    Filtrar(cat);
-                    listBox1.Items.Clear();
-                    for (int i = 0; i < TareasFiltradas.Count; i++)
-                    {
-                        listBox1.Items.Insert(i, TareasFiltradas[i]);
-                    }
-                    listBox1.Refresh();
-                    break;
-
-                case "Urgente":
-                    Filtrar(cat);
-                    listBox1.Items.Clear();
-                    for (int i = 0; i < TareasFiltradas.Count; i++)
-                    {
-                        listBox1.Items.Insert(i, TareasFiltradas[i]);
-                    }
-                    listBox1.Refresh();
-                    break;
-
-                case "Completadas":
-                    Filtrar(cat);
-                    listBox1.Items.Clear();
-                    for (int i = 0; i < TareasFiltradas.Count; i++)
-                    {
-                        listBox1.Items.Insert(i, TareasFiltradas[i]);
-                    }
-                    listBox1.Refresh();
-                    break;
-
-                case "No Completadas":
-                    Filtrar(cat);
-                    listBox1.Items.Clear();
-                    for (int i = 0; i < TareasFiltradas.Count; i++)
-                    {
-                        listBox1.Items.Insert(i, TareasFiltradas[i]);
-                    }
-                    listBox1.Refresh();
-                    break;
-            }*/
-
+                
+            } else if(cat == "Escuela" || cat == "Trabajo" || cat == "Personal" || cat == "Urgente")
+            {
+                FiltrarPorCategoria(cat);
+            }
+            else if (cat == "Completadas" || cat == "No Completadas")
+            {
+                FiltrarPorCompletadosONoCompletados(cat);
+            }
             InsertarTareasFiltradas(cat);
+            
+            
         }
-//listBox1.Sorted.CompareTo(tareas[listBox1.SelectedIndex].categoria);
+
         public void FiltrarPorCategoria(string parametro)
         {
             TareasFiltradas.Clear();
@@ -171,11 +122,27 @@ namespace WindowsFormsApp1
             }
         }
 
+        public void FiltrarPorCompletadosONoCompletados(string parametro)
+        {
+            TareasFiltradas.Clear();
+
+            for (int i = 0; i < tareas.Count; i++)
+            {
+                if (parametro == "Completadas" && tareas[i].esCompletada == true)
+                { 
+                    TareasFiltradas.Add(tareas[i]);
+                } else if (parametro == "No Completadas" && tareas[i].esCompletada == false)
+                {
+                    TareasFiltradas.Add(tareas[i]);
+                }
+                
+            }
+        }
+
         public void InsertarTareasFiltradas(string parametro)
         {
-            if (string.IsNullOrEmpty(parametro) != true)
+            if (string.IsNullOrEmpty(parametro) != true && parametro != "Todo")
             {
-                FiltrarPorCategoria(parametro);
                 listBox1.Items.Clear();
                 for (int i = 0; i < TareasFiltradas.Count; i++)
                 {
@@ -185,10 +152,12 @@ namespace WindowsFormsApp1
             }
             else
             {
-                for (int i = 0; i < TareasFiltradas.Count; i++)
+                listBox1.Items.Clear();
+                for (int i = 0; i < tareas.Count; i++)
                 {
                     listBox1.Items.Insert(i, tareas[i]);
                 }
+                listBox1.Refresh();
             }
         }
     }
