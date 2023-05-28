@@ -48,9 +48,6 @@ namespace WindowsFormsApp1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            //ListBox listBox = form.GetListBox();
-
-            //textBox1.Lines[0] = Form1.tareas[listBox.SelectedIndex].titulo;
         }
 
         private void button_guardar_Click(object sender, EventArgs e)
