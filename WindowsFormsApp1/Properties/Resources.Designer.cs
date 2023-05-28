@@ -63,16 +63,6 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _00_07_05_458ef7261a408f3272ac669788a79144 {
-            get {
-                object obj = ResourceManager.GetObject("00-07-05-458ef7261a408f3272ac669788a79144", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _51d2d8319255a99ded3f9f2178632db4 {
             get {
                 object obj = ResourceManager.GetObject("51d2d8319255a99ded3f9f2178632db4", resourceCulture);
@@ -83,9 +73,9 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap f6cae74e43dc2703670bbdcb618eb39e {
+        internal static System.Drawing.Bitmap _614f1ff8a1e5e58 {
             get {
-                object obj = ResourceManager.GetObject("f6cae74e43dc2703670bbdcb618eb39e", resourceCulture);
+                object obj = ResourceManager.GetObject("614f1ff8a1e5e58", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +83,19 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap flat_750x1000_075_f {
+        internal static System.Drawing.Bitmap _614f1ff8a1e5e581 {
             get {
-                object obj = ResourceManager.GetObject("flat,750x1000,075,f", resourceCulture);
+                object obj = ResourceManager.GetObject("614f1ff8a1e5e581", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap aggretsuko_metal_waifu2x_art_noise3_scale {
+            get {
+                object obj = ResourceManager.GetObject("aggretsuko_metal_waifu2x_art_noise3_scale", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

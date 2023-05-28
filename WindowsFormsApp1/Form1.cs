@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
                 index++;
             } catch (Exception ex)
             {
-                MessageBox.Show("El index es" + index);
+                //MessageBox.Show("El index es" + index);
 
             }
         }
@@ -74,8 +74,11 @@ namespace WindowsFormsApp1
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Remove(listBox1.SelectedItem);
-            tareas.Remove(tareas[listBox1.SelectedIndex]);
+            try
+            {
+                listBox1.Items.Remove(listBox1.SelectedItem);
+                tareas.Remove(tareas[listBox1.SelectedIndex]);
+            } catch (Exception ex) { }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,6 +162,33 @@ namespace WindowsFormsApp1
                 }
                 listBox1.Refresh();
             }
+        }
+
+        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
+        {
+            toolStripDropDownButton1.DropDownItems.Clear();
+            for (int i = 0; i < tareas.Count; i++) 
+            {
+                if (TareaCercaDeDiaLimite(tareas[i].fechaVencimiento))
+                {
+                    toolStripDropDownButton1.DropDownItems.Insert(i, new ToolStripMenuItem("" + tareas[i]));
+                }
+
+            }
+            toolStripDropDownButton1.DropDownDirection = ToolStripDropDownDirection.Left;
+            toolStripDropDownButton1.DropDownDirection = ToolStripDropDownDirection.BelowRight;
+        }
+
+        private bool TareaCercaDeDiaLimite(DateTime deadLineDate)
+        {
+            DateTime fechaActual = DateTime.Now;
+            TimeSpan diferencia = deadLineDate.Date - fechaActual.Date;
+
+            if (diferencia.Days <= 2)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
