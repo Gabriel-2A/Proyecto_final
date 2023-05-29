@@ -193,7 +193,7 @@ namespace WindowsFormsApp1
 
         private void Boton_Informe_Click(object sender, EventArgs e)
         {
-            Form4 form = new Form4(tareas);
+            Informe form = new Informe(tareas);
             form.ShowDialog();
         }
 

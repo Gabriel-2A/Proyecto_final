@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form4 : Form
+    public partial class Informe : Form
     {
         public static List<Tarea> tareas;
-        public Form4(List<Tarea> tareillas)
+        public Informe(List<Tarea> tareillas)
         {
             InitializeComponent();
             tareas = tareillas;
