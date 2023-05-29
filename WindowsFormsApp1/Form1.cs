@@ -190,5 +190,16 @@ namespace WindowsFormsApp1
             }
             return false;
         }
+
+        private void Boton_Informe_Click(object sender, EventArgs e)
+        {
+            Form4 form = new Form4(tareas);
+            form.ShowDialog();
+        }
+
+        private void BotonFiltrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

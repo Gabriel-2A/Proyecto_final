@@ -43,6 +43,7 @@ namespace WindowsFormsApp1
             this.FiltrarCategoria = new System.Windows.Forms.ToolStripComboBox();
             this.aceparToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.Boton_Informe = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,12 +87,13 @@ namespace WindowsFormsApp1
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.BotonFiltrar,
-            this.toolStripDropDownButton1});
+            this.toolStripDropDownButton1,
+            this.Boton_Informe});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(136, 522);
+            this.toolStrip1.Size = new System.Drawing.Size(144, 522);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -116,7 +118,7 @@ namespace WindowsFormsApp1
             this.toolStripButton1.Image = global::WindowsFormsApp1.Properties.Resources.aggretsuko_metal_waifu2x_art_noise3_scale;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.LavenderBlush;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(173, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(127, 24);
             this.toolStripButton1.Text = "Agregar Tarea";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -132,6 +134,7 @@ namespace WindowsFormsApp1
             this.BotonFiltrar.Name = "BotonFiltrar";
             this.BotonFiltrar.Size = new System.Drawing.Size(130, 24);
             this.BotonFiltrar.Text = "Filtrar Tarea";
+            this.BotonFiltrar.Click += new System.EventHandler(this.BotonFiltrar_Click);
             // 
             // FiltrarCategoria
             // 
@@ -152,7 +155,7 @@ namespace WindowsFormsApp1
             // 
             this.aceparToolStripMenuItem.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold);
             this.aceparToolStripMenuItem.Name = "aceparToolStripMenuItem";
-            this.aceparToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.aceparToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.aceparToolStripMenuItem.Text = "Aceptar";
             this.aceparToolStripMenuItem.Click += new System.EventHandler(this.aceparToolStripMenuItem_Click);
             // 
@@ -166,6 +169,17 @@ namespace WindowsFormsApp1
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(135, 24);
             this.toolStripDropDownButton1.Text = "Recordatorios";
             this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
+            // 
+            // Boton_Informe
+            // 
+            this.Boton_Informe.Font = new System.Drawing.Font("MV Boli", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boton_Informe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Boton_Informe.Image = global::WindowsFormsApp1.Properties.Resources.aggretsuko_metal_waifu2x_art_noise3_scale;
+            this.Boton_Informe.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Boton_Informe.Name = "Boton_Informe";
+            this.Boton_Informe.Size = new System.Drawing.Size(143, 24);
+            this.Boton_Informe.Text = "Generar Informe";
+            this.Boton_Informe.Click += new System.EventHandler(this.Boton_Informe_Click);
             // 
             // Form1
             // 
@@ -205,6 +219,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripComboBox FiltrarCategoria;
         private System.Windows.Forms.ToolStripMenuItem aceparToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripButton Boton_Informe;
     }
 }
 
