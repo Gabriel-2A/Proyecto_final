@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.noCompletadas = new System.Windows.Forms.Label();
             this.completadas = new System.Windows.Forms.Label();
             this.todo = new System.Windows.Forms.Label();
@@ -215,6 +216,7 @@
             this.Controls.Add(this.lbl_Escuela);
             this.Controls.Add(this.lbl_Todas);
             this.Controls.Add(this.lbl_Titulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form4";
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
