@@ -59,17 +59,20 @@ namespace WindowsFormsApp1
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 form = new Form3(listBox1);
-            
-            form.GetTextBox1().Text = tareas[listBox1.SelectedIndex].titulo;
-            form.GetComboBox().Text = tareas[listBox1.SelectedIndex].categoria;
-            form.GetDateTimePicker().Value = tareas[listBox1.SelectedIndex].fechaVencimiento;
-            form.GetTextBox2().Text = tareas[listBox1.SelectedIndex].descripcion;
-            form.GetCheckBox().Checked = tareas[listBox1.SelectedIndex].esCompletada;
-            form.ShowDialog();
+            try
+            {
+                Form3 form = new Form3(listBox1);
 
-            listBox1.Items.Insert(listBox1.SelectedIndex, tareas[listBox1.SelectedIndex]);
-            listBox1.Items.Remove(listBox1.SelectedItem);
+                form.GetTextBox1().Text = tareas[listBox1.SelectedIndex].titulo;
+                form.GetComboBox().Text = tareas[listBox1.SelectedIndex].categoria;
+                form.GetDateTimePicker().Value = tareas[listBox1.SelectedIndex].fechaVencimiento;
+                form.GetTextBox2().Text = tareas[listBox1.SelectedIndex].descripcion;
+                form.GetCheckBox().Checked = tareas[listBox1.SelectedIndex].esCompletada;
+                form.ShowDialog();
+
+                listBox1.Items.Insert(listBox1.SelectedIndex, tareas[listBox1.SelectedIndex]);
+                listBox1.Items.Remove(listBox1.SelectedItem);
+            } catch (Exception ex) { }
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,8 +91,10 @@ namespace WindowsFormsApp1
 
         private void marcarComoCompletadaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tareas[listBox1.SelectedIndex].esCompletada = true;
-            
+            try
+            {
+                tareas[listBox1.SelectedIndex].esCompletada = true;
+            } catch (Exception ex) { }
         }
 
         private void aceparToolStripMenuItem_Click(object sender, EventArgs e)
