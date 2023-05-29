@@ -37,13 +37,13 @@ namespace WindowsFormsApp1
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcarComoCompletadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.BotonFiltrar = new System.Windows.Forms.ToolStripDropDownButton();
             this.FiltrarCategoria = new System.Windows.Forms.ToolStripComboBox();
             this.aceparToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.Boton_Informe = new System.Windows.Forms.ToolStripButton();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -97,20 +97,6 @@ namespace WindowsFormsApp1
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // listBox1
-            // 
-            this.listBox1.BackColor = System.Drawing.Color.PapayaWhip;
-            this.listBox1.ContextMenuStrip = this.contextMenuStrip1;
-            this.listBox1.Font = new System.Drawing.Font("MV Boli", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 22;
-            this.listBox1.Location = new System.Drawing.Point(153, -1);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(472, 532);
-            this.listBox1.TabIndex = 2;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
             // toolStripButton1
             // 
             this.toolStripButton1.Font = new System.Drawing.Font("MV Boli", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -155,7 +141,7 @@ namespace WindowsFormsApp1
             // 
             this.aceparToolStripMenuItem.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold);
             this.aceparToolStripMenuItem.Name = "aceparToolStripMenuItem";
-            this.aceparToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aceparToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.aceparToolStripMenuItem.Text = "Aceptar";
             this.aceparToolStripMenuItem.Click += new System.EventHandler(this.aceparToolStripMenuItem_Click);
             // 
@@ -180,6 +166,20 @@ namespace WindowsFormsApp1
             this.Boton_Informe.Size = new System.Drawing.Size(143, 24);
             this.Boton_Informe.Text = "Generar Informe";
             this.Boton_Informe.Click += new System.EventHandler(this.Boton_Informe_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.Color.PapayaWhip;
+            this.listBox1.ContextMenuStrip = this.contextMenuStrip1;
+            this.listBox1.Font = new System.Drawing.Font("MV Boli", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 22;
+            this.listBox1.Location = new System.Drawing.Point(161, -1);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(464, 532);
+            this.listBox1.TabIndex = 2;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
